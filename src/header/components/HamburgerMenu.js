@@ -11,7 +11,8 @@ class HamburgerMenu extends Component {
     return (
       <div className="hamburger-menu-main">
         <Link to="/">HOME</Link>
-        <Link to="/usuario">DEPARTAMENTOS</Link>
+        <Link to="/registro">REGISTRO</Link>
+        <Link to="/usuario"></Link>
       </div>
     );
   }
