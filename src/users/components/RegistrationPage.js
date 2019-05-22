@@ -22,6 +22,15 @@ export class RegistrationPage extends Component {
                 />
               </div>
               <div className="md-form">
+                <i className="fa fa-address-card prefix grey-text" />
+                <input
+                  type="text"
+                  id="orangeForm-matricula3"
+                  className="form-control"
+                  placeholder="Matricula"
+                />
+              </div>
+              <div className="md-form">
                 <i className="fa fa-envelope prefix grey-text" />
                 <input
                   type="email"
@@ -42,10 +51,6 @@ export class RegistrationPage extends Component {
               <div className="text-center">
                 <button className="btn btn-deep-orange">
                   Cadastrar
-                  <i
-                    className="fa fa-angle-double-right pl-2"
-                    aria-hidden="true"
-                  />
                 </button>
               </div>
             </form>
