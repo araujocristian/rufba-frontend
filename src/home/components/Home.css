@@ -1,0 +1,58 @@
+.unidade {
+  background-color: #ce3c25;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  margin: 20px 0;
+}
+.unidade-nome {
+  font-size: 25px !important;
+}
+.unidade > span {
+  font-size: 15px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: auto 5px;
+}
+
+.cardapio-nome {
+  background-color: #ce3c25;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.cardapio-nome > p {
+  margin: auto 5px;
+}
+
+.refeicoes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.new-refeicao {
+  background-color: #ce3c25;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 100%;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 20px 0;
+}
+
+.new-refeicao > span {
+  font-size: 25px;
+  margin: auto;
+}
+
+.new-refeicao > button {
+  width: 40%;
+  margin: auto;
+}

@@ -22,7 +22,7 @@ export class RegistrationPage extends Component {
       this.setState({ error: "Preencha todos os dados para se cadastrar" });
     } else {
       try {
-         const response = await api.post("/auth/register", { name, registration, email, password });
+         const response = await api.post("/auth/register", { name, registration, email, password, isAdmin: false });
         this.props.history.push("/");
         console.log(response);
       } catch (err) {

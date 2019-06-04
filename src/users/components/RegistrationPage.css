@@ -7,7 +7,7 @@
   margin: 100px auto;
 }
 
-p {
+.registration-page-container > p {
   color: #ff3333;
   margin-bottom: 15px;
   border: 1px solid #ff3333;
