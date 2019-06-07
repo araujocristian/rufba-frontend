@@ -2,8 +2,14 @@
 import { authGet, authPost, authPut, authDelete } from '../../api';
 import { camelizeKeys } from 'humps';
 import { normalize } from 'normalizr';
+// Methods
+import { register, login, logout, validateToken } from './session';
 
 const User = {
+  register: register,
+  login: login,
+  logout: logout,
+  validateToken: validateToken,
 
   async getTest() {
     // Mutliple

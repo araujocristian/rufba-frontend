@@ -1,31 +1,28 @@
-import React from "react";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { RegistrationPage, LoginPage, ProfilePage } from "./users";
+import { RegistrationPage, LoginPage, ProfilePage, LogoutPage} from "./users";
 import {Home} from './home'
-import { isAuthenticated } from "./services/auth";
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={props =>
-      isAuthenticated() ? (
-        <Component {...props} />
-      ) : (
-        <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
-      )
-    }
-  />
-);
+const routes =  [
+  {
+    path:'/',
+    component: Home,
+    exact: true,
+  },
+  {
+    path: '/cadastro',
+    component: RegistrationPage,
+  },
+  {
+    path:'/login',
+    component: LoginPage,
+  },
+  {
+    path: '/logout',
+    component: LogoutPage,
+  },
+  {
+    path: '/perfil',
+    component: ProfilePage,
+  },
+];
 
-const Routes = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route exact path="/login" component={LoginPage} />
-      <Route path="/cadastro" component={RegistrationPage} />
-      <PrivateRoute path="/" component={Home} />
-      <PrivateRoute path="/perfil" component={ProfilePage} />
-    </Switch>
-  </BrowserRouter>
-);
-
-export default Routes;
+export default routes;

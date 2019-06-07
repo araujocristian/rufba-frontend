@@ -7,11 +7,16 @@
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "humps": "^2.0.1",
+    "lodash": "^4.17.11",
     "normalizr": "^3.3.0",
+    "raven-js": "^3.27.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0"
+    "react-scripts": "3.0.0",
+    "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -33,5 +38,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1"
   }
 }
