@@ -2,6 +2,8 @@
 import React, { Component } from "react";
 // Components
 import HamburgerMenu from "./HamburgerMenu";
+import { Link } from "react-router-dom";
+
 // Styles
 import "./Header.css";
 
@@ -40,7 +42,7 @@ class Header extends Component {
           >
             &#x2630;
           </span>
-          <span className="header-name">RUFBA</span>
+          <Link className="header-name" to="/"><span >RUFBA</span></Link>
         </div>
         {this.state.showHamburgerMenu ? (
           <div className="hamburger-menu">

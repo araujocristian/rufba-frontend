@@ -76,7 +76,6 @@ export class LoginPage extends Component {
     }
     return (
       <div className="login-page-container col-md-6 mb-4">
-        {console.log(this.props)}
         <div className="card">
           <div className="card-body">
             <form

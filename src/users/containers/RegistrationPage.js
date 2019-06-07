@@ -157,7 +157,6 @@ class RegistrationPage extends Component {
       <div className="registration-page-container col-md-6 mb-4">
         <div className="card">
           <div className="card-body">
-            {console.log(this.props)}
             <form
               onSubmit={e => {
                 e.preventDefault();

@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { UnauthenticatedRedirect } from "../../users";
+// Composers
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+// Actions
+import { getUnits, getUnit } from "../actions";
 
-import api from "../../services/api";
 import recipes from "../../services/recipes.json";
 import RecipeItem from "./RecipeItem";
 
@@ -16,19 +20,14 @@ export class Home extends Component {
     this.state = {};
   }
 
-  async componentDidMount() {
-    try {
-      const response = await api.get("/model/unit/ondina", {});
-
-      this.setState({ response: response.data });
-    } catch (err) {
-      console.log(err);
-    }
+  componentDidMount(){
+    this.props.getUnits();
   }
 
   render() {
     return (
       <UnauthenticatedRedirect>
+        {console.log(this.props)}
         <div>
           <div className="unidade">
             <span className="unidade-nome">Unidade: Ondina</span>
@@ -62,4 +61,30 @@ export class Home extends Component {
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    /*loggedIn: loggedInSelector(state),
+    isLoggingIn: loggingInLoadingSelector(state),
+    isRegistering: registeringLoadingSelector(state),
+    loginErrors: loginErrorsSelector(state),
+    registrationErrors: registrationErrorsSelector(state),*/
+  };
+};
+
+const mapDispatchToProps = (dispatch: Dispatch, stateProps) => {
+  return {
+    getUnits: () => {
+      dispatch(getUnits());
+    },
+    getUnit: (unitName: String) => {
+      dispatch(getUnits(unitName));
+    }
+  };
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Home)
+);
