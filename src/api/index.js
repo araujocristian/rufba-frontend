@@ -1,51 +1,58 @@
 // @flow
-const API_ENDPOINT = 'http://localhost:3030';
+const API_ENDPOINT = "http://localhost:3030";
+
+export function getToken() {
+  return (
+    localStorage.getItem("access-token") ||
+    sessionStorage.getItem("access-token")
+  );
+}
 
 export function isAuthenticated() {
   const accessToken =
-    localStorage.getItem('access-token') ||
-    sessionStorage.getItem('access-token');
+    localStorage.getItem("access-token") ||
+    sessionStorage.getItem("access-token");
   return accessToken != null;
 }
 
 function getAuthenticatedHeaders(
-  unauthenticatedHeaders: Headers = new Headers(),
+  unauthenticatedHeaders: Headers = new Headers()
 ) {
   // Get token headers from localStorage
   const accessToken =
-    localStorage.getItem('access-token') ||
-    sessionStorage.getItem('access-token');
+    localStorage.getItem("access-token") ||
+    sessionStorage.getItem("access-token");
 
   if (accessToken != null) {
-    unauthenticatedHeaders.append('Authorization', `Bearer ${accessToken}`);
+    unauthenticatedHeaders.append("Authorization", `Bearer ${accessToken}`);
   }
   return unauthenticatedHeaders;
 }
 
 function defaultHandleErrors(response: Response, responseBody: JSON) {
   throw new Error(
-    JSON.stringify({ ...responseBody, statusCode: response.status }),
+    JSON.stringify({ ...responseBody, statusCode: response.status })
   );
 }
 
 export const createAuthRequest = (
-  method: 'POST' | 'GET' | 'PUT' | 'DELETE',
+  method: "POST" | "GET" | "PUT" | "DELETE"
 ) => async (
   path: string,
   body: {} = {},
   handleErrors: Response => void = defaultHandleErrors,
-  headers: Headers = new Headers(),
+  headers: Headers = new Headers()
 ) => {
   const apiHeaders = getAuthenticatedHeaders(headers);
-  apiHeaders.append('Content-Type', 'application/json');
-  apiHeaders.append('Accept', 'application/json');
+  apiHeaders.append("Content-Type", "application/json");
+  apiHeaders.append("Accept", "application/json");
 
   let init = {
     method,
-    headers: apiHeaders,
+    headers: apiHeaders
   };
 
-  if (body && (init.method === 'POST' || init.method === 'PUT')) {
+  if (body && (init.method === "POST" || init.method === "PUT")) {
     init = { ...init, body: JSON.stringify(body) };
   }
 
@@ -58,7 +65,7 @@ export const createAuthRequest = (
   return response;
 };
 
-export const authGet = createAuthRequest('GET');
-export const authPost = createAuthRequest('POST');
-export const authPut = createAuthRequest('PUT');
-export const authDelete = createAuthRequest('DELETE');
+export const authGet = createAuthRequest("GET");
+export const authPost = createAuthRequest("POST");
+export const authPut = createAuthRequest("PUT");
+export const authDelete = createAuthRequest("DELETE");

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 //API
-import api from "../../services/api";
 //Style
 import "./ProfilePage.css";
 

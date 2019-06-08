@@ -8,8 +8,9 @@
 /**
  * Imports
  */
-import InputFieldErrorMessage from './components/InputFieldErrorMessage';
+import InputFieldErrorMessage from "./components/InputFieldErrorMessage";
 import validationHelpers from "./validationHelpers";
+import {translateUnit} from "./translationHelpers";
 /**
  * Reducer
  * =======
@@ -46,9 +47,7 @@ import validationHelpers from "./validationHelpers";
  * =====
  * Components are unconnnected and used to display static information
  */
-export {
-  InputFieldErrorMessage
-}
+export { InputFieldErrorMessage };
 
 /**
  * Reducer
@@ -61,7 +60,7 @@ export {
  * Helper Functions
  * =======
  */
-export { validationHelpers };
+export { validationHelpers, translateUnit };
 
 /**
  * Other Exports

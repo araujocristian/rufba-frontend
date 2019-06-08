@@ -4,52 +4,68 @@
   "href": "http://www.recipepuppy.com/",
   "results": [
     {
-      "title": "Ginger Champagne",
+      "name": "Ginger Champagne",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Ginger-Champagne/Detail.aspx",
-      "ingredients": "champagne, ginger, ice, vodka",
-      "thumbnail": "http://img.recipepuppy.com/1.jpg"
+      "description": "champagne, ginger, ice, vodka",
+      "icon": "http://img.recipepuppy.com/1.jpg"
     },
     {
-      "title": "Potato and Cheese Frittata",
+      "name": "Potato and Cheese Frittata",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Potato-and-Cheese-Frittata/Detail.aspx",
-      "ingredients": "cheddar cheese, eggs, olive oil, onions, potato, salt",
-      "thumbnail": "http://img.recipepuppy.com/2.jpg"
+      "description": "cheddar cheese, eggs, olive oil, onions, potato, salt",
+      "icon": "http://img.recipepuppy.com/2.jpg"
     },
     {
-      "title": "Eggnog Thumbprints",
+      "name": "Eggnog Thumbprints",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Eggnog-Thumbprints/Detail.aspx",
-      "ingredients": "brown sugar, butter, butter, powdered sugar, eggs, flour, nutmeg, rum, salt, vanilla extract, sugar",
-      "thumbnail": "http://img.recipepuppy.com/3.jpg"
+      "description": "brown sugar, butter, butter, powdered sugar, eggs, flour, nutmeg, rum, salt, vanilla extract, sugar",
+      "icon": "http://img.recipepuppy.com/3.jpg"
     },
     {
-      "title": "Succulent Pork Roast",
+      "name": "Succulent Pork Roast",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Succulent-Pork-Roast/Detail.aspx",
-      "ingredients": "brown sugar, garlic, pork chops, water",
-      "thumbnail": "http://img.recipepuppy.com/4.jpg"
+      "description": "brown sugar, garlic, pork chops, water",
+      "icon": "http://img.recipepuppy.com/4.jpg"
     },
     {
-      "title": "Irish Champ",
+      "name": "Irish Champ",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Irish-Champ/Detail.aspx",
-      "ingredients": "black pepper, butter, green onion, milk, potato, salt",
-      "thumbnail": "http://img.recipepuppy.com/5.jpg"
+      "description": "black pepper, butter, green onion, milk, potato, salt",
+      "icon": "http://img.recipepuppy.com/5.jpg"
     },
     {
-      "title": "Chocolate-Cherry Thumbprints",
+      "name": "Chocolate-Cherry Thumbprints",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Chocolate-Cherry-Thumbprints/Detail.aspx",
-      "ingredients": "cocoa powder, baking powder, butter, eggs, flour, oats, salt, sugar, vanilla extract",
-      "thumbnail": "http://img.recipepuppy.com/6.jpg"
+      "description": "cocoa powder, baking powder, butter, eggs, flour, oats, salt, sugar, vanilla extract",
+      "icon": "http://img.recipepuppy.com/6.jpg"
     },
     {
-      "title": "Mean Woman Pasta",
+      "name": "Mean Woman Pasta",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Mean-Woman-Pasta/Detail.aspx",
-      "ingredients": "garlic, kalamata olive, olive oil, pepperoncini, seashell pasta, tomato",
-      "thumbnail": "http://img.recipepuppy.com/7.jpg"
+      "description": "garlic, kalamata olive, olive oil, pepperoncini, seashell pasta, tomato",
+      "icon": "http://img.recipepuppy.com/7.jpg"
     },
     {
-      "title": "Hot Spiced Cider",
+      "name": "Hot Spiced Cider",
+      "vegetarian": true,
+      "vegan": false,
       "href": "http://allrecipes.com/Recipe/Hot-Spiced-Cider/Detail.aspx",
-      "ingredients": "allspice, apple cider, brown sugar, cinnamon, cloves, nutmeg, orange, salt",
-      "thumbnail": "http://img.recipepuppy.com/8.jpg"
+      "description": "allspice, apple cider, brown sugar, cinnamon, cloves, nutmeg, orange, salt",
+      "icon": "http://img.recipepuppy.com/8.jpg"
     }
   ]
 }

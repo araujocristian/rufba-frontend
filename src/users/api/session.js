@@ -1,5 +1,5 @@
 // @flow
-import { authPost, authGet } from "../../api";
+import { authPost, getToken } from "../../api";
 import { normalize } from "normalizr";
 import { camelizeKeys } from "humps";
 import * as schema from "./schema";
@@ -48,11 +48,12 @@ export async function login(email: string, password: string) {
 /**
  * UPDATE TOKEN
  */
-export async function updateToken(token, remember) {
+export async function updateToken(token) {
   // We use a try/catch to detect situations where localStorage quota is 0, like safari private browsing mode
   try {
-    if (remember) throw new Error("Should not remember");
     localStorage.setItem("access-token", token);
+    sessionStorage.setItem("access-token", token);
+
   } catch (err) {
     // Remove items from localStorage just to be sure
     localStorage.removeItem("access-token");
@@ -74,8 +75,5 @@ export async function logout() {
  * Validate token
  */
 export async function validateToken() {
-  const response = await authGet("/v2/users/me");
-  const data = await response.json().then(b => camelizeKeys(b));
-  const normalized = normalize(data, schema.user);
-  return normalized;
+  return getToken() != null;
 }

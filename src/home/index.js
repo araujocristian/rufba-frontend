@@ -1,3 +1,5 @@
-import Home from './components/Home'
+import Home from './containers/Home'
+import reducer from "./reducer";
 
+export default reducer;
 export {Home}

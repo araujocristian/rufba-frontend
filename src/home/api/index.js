@@ -8,7 +8,7 @@ const Unit = {
   async getUnit(unitName: String) {
     const response = await authGet(`/model/unit/${unitName}`);
     const data = await response.json().then(b => camelizeKeys(b));
-    const normalized = normalize(data, schema.unit);
+    const normalized = normalize(data, schema.units);
     return normalized;
   },
 

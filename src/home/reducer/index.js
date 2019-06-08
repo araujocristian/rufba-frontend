@@ -6,54 +6,33 @@ import * as actions from '../actions';
 import type { Reducer } from 'redux';
 import type { ActionType } from 'redux-actions';
 
-// @flow
-import { handleActions, combineActions } from 'redux-actions';
-import { combineReducers } from 'redux';
-import * as actions from '../actions';
-// Types
-import type { Reducer } from 'redux';
-import type { ActionType } from 'redux-actions';
-
-// List of current orders for the index
+// List of current units for the index
 const currentList: Reducer<number[], ActionType<*>> = handleActions(
   {
-    [combineActions(actions.fetchPastOrders)]: {
-      next: (state, action) => action.payload.result.orders,
+    [combineActions(actions.fetchUnits)]: {
+      next: (state, action) => action.payload.result.units,
     },
   },
   [],
 );
 
 // Current past order
-const current: Reducer<number, ActionType<*>> = handleActions(
+const current = handleActions(
   {
-    [combineActions(actions.fetchPastOrder)]: {
-      next: (state, action) => action.payload.result,
+    [combineActions(actions.fetchUnit)]: {
+      next: (state, action) => action.payload.result.unit,
+      throw: (state, action) => []
     },
   },
   [],
 );
 
-const pagesInfo = handleActions(
+const units = handleActions(
   {
-    [combineActions(actions.fetchPastOrders)]: {
+    [combineActions(actions.fetchUnits, actions.fetchUnit)]: {
       next: (state, action) => ({
         ...state,
-        pages: action.payload.result.pages,
-        perPage: action.payload.result.count,
-        currentPage: action.payload.result.currentPage,
-      }),
-    },
-  },
-  {},
-);
-
-const orders = handleActions(
-  {
-    [combineActions(actions.fetchPastOrders, actions.fetchPastOrder)]: {
-      next: (state, action) => ({
-        ...state,
-        ...action.payload.entities.orders,
+        ...action.payload.entities.units,
       }),
     },
   },
@@ -63,7 +42,7 @@ const orders = handleActions(
 // LINE ITEMS
 const lineItems = handleActions(
   {
-    [combineActions(actions.fetchPastOrders, actions.fetchPastOrder)]: {
+    [combineActions(actions.fetchUnits, actions.fetchUnit)]: {
       next: (state, action) => ({
         ...state,
         ...action.payload.entities.lineItems,
@@ -73,56 +52,30 @@ const lineItems = handleActions(
   {},
 );
 
-// SHIPMENTS
-const shipments = handleActions(
-  {
-    [combineActions(actions.fetchPastOrders, actions.fetchPastOrder)]: {
-      next: (state, action) => ({
-        ...state,
-        ...action.payload.entities.shipments,
-      }),
-    },
-  },
-  {},
-);
-
-// SHIPPING RATES
-const shippingRates = handleActions(
-  {
-    [combineActions(actions.fetchPastOrders, actions.fetchPastOrder)]: {
-      next: (state, action) => ({
-        ...state,
-        ...action.payload.entities.shippingRates,
-      }),
-    },
-  },
-  {},
-);
-
 // General loading states
 const initialLoadingState = {
-  gettingOrders: false,
-  gettingOrder: false,
+  gettingUnits: false,
+  gettingUnit: false,
 };
 const loading = handleActions(
   {
     // ORDERS INDEX
-    [combineActions(actions.fetchPastOrdersRequest)]: (state, action) => ({
+    [combineActions(actions.fetchUnitsRequest)]: (state, action) => ({
       ...state,
-      gettingOrders: true,
+      gettingUnits: true,
     }),
-    [combineActions(actions.fetchPastOrders)]: (state, action) => ({
+    [combineActions(actions.fetchUnits)]: (state, action) => ({
       ...state,
-      gettingOrders: false,
+      gettingUnits: false,
     }),
     // SINGLE ORDER
-    [combineActions(actions.fetchPastOrderRequest)]: (state, action) => ({
+    [combineActions(actions.fetchUnitRequest)]: (state, action) => ({
       ...state,
-      gettingOrder: true,
+      gettingUnit: true,
     }),
-    [combineActions(actions.fetchPastOrder)]: (state, action) => ({
+    [combineActions(actions.fetchUnit)]: (state, action) => ({
       ...state,
-      gettingOrder: false,
+      gettingUnit: false,
     }),
   },
   initialLoadingState,
@@ -131,11 +84,8 @@ const loading = handleActions(
 const reducers = combineReducers({
   currentList,
   current,
-  pagesInfo,
-  orders,
+  units,
   lineItems,
-  shipments,
-  shippingRates,
 
   loading,
 });

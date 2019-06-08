@@ -33,7 +33,7 @@ const loggedIn: Reducer<string, Action> = handleActions(
       throw: (state, action) => false,
     },
     [validateUser]: {
-      next: (state, action) => true,
+      next: (state, action) => action.payload,
       throw: (state, action) => false,
     },
     [logoutUser]: (state, action) => false,
@@ -49,7 +49,7 @@ const initialUserInformation = {
 };
 const information = handleActions(
   {
-    [combineActions(loginUser, validateUser)]: {
+    [combineActions(loginUser,)]: {
       next: (state, action) =>
         action.payload.entities.user[action.payload.result],
       throw: (state, action) => initialUserInformation,

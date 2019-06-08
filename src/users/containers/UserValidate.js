@@ -20,6 +20,7 @@ class UserValidate extends Component {
 
   constructor(props: Props) {
     super(props);
+    props.validate();
   }
 
   render() {
@@ -35,7 +36,9 @@ const mapStateToProps = (state, ownProps: {}) => {
 
 const mapDispatchToProps = (dispatch: Dispatch, ownProps: {}) => {
   return {
-    
+    validate: () => {
+      dispatch(validate());
+    },
   };
 };
 
