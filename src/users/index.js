@@ -6,10 +6,11 @@ import ProfilePage from "./components/ProfilePage";
 import UserValidate from './containers/UserValidate';
 import UnauthenticatedRedirect from './containers/UnauthenticatedRedirect';
 import userLoggedInConnector from './connectors/userLoggedInConnector';
+import Form from './containers/Form';
 
 
 import reducer from "./reducer";
 
 export default reducer;
 
-export { RegistrationPage, LoginPage, LogoutPage, ProfilePage, UserValidate, UnauthenticatedRedirect, userLoggedInConnector };
+export { RegistrationPage, LoginPage, LogoutPage, ProfilePage, UserValidate, UnauthenticatedRedirect, userLoggedInConnector, Form };

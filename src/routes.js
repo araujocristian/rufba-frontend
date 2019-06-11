@@ -1,4 +1,4 @@
-import { RegistrationPage, LoginPage, ProfilePage, LogoutPage} from "./users";
+import { RegistrationPage, LoginPage, ProfilePage, LogoutPage, Form} from "./users";
 import {Home} from './home'
 
 const routes =  [
@@ -23,6 +23,11 @@ const routes =  [
     path: '/perfil',
     component: ProfilePage,
   },
+  {
+    path: '/form',
+    component: Form,
+  },
+
 ];
 
 export default routes;
