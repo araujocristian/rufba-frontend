@@ -36,19 +36,14 @@ export const currentUnitSelector = createSelector(
 );
 
 ////////////////// LINE ITEMS ///////////////////
-// Get the line items that belong to the current order
-/*export const currentOrderLineItemsSelector = createSelector(
+// Get the line items that belong to the current orderlineItems
+export const currentMenuItemsSelector = createSelector(
   localStateSelector,
-  currentOrderSelector,
-  (state, order) => {
-    // If we don't have an order return an empty array
-    if (!order) {
-      return [];
-    }
+  (state) => {
 
-    return order.lineItems.map(id => state.lineItems[id]);
+    return Object.values(state.menuItems);
   },
-);*/
+);
 
 
 //////////////////////// LOADING ////////////////////

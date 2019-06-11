@@ -40,16 +40,16 @@ const units = handleActions(
 );
 
 // LINE ITEMS
-const lineItems = handleActions(
+const menuItems = handleActions(
   {
-    [combineActions(actions.fetchUnits, actions.fetchUnit)]: {
+    [combineActions(actions.fetchUnit)]: {
       next: (state, action) => ({
         ...state,
-        ...action.payload.entities.lineItems,
+        ...action.payload.result.unit.currentMenu.menuItems,
       }),
     },
   },
-  {},
+  [],
 );
 
 // General loading states
@@ -85,7 +85,7 @@ const reducers = combineReducers({
   currentList,
   current,
   units,
-  lineItems,
+  menuItems,
 
   loading,
 });
