@@ -11,7 +11,8 @@ import { getUnits, getUnit } from "../actions";
 import {
   unitListSelector,
   unitNameListSelector,
-  currentUnitSelector
+  currentUnitSelector,
+  currentMenuItemsSelector
 } from "../selectors";
 import recipes from "../../services/recipes.json";
 import RecipeItem from "../components/RecipeItem";
@@ -79,17 +80,17 @@ export class Home extends Component {
                 <div className="cardapio-nome">
                   <p>Cardapio do dia</p>
                 </div>
-                {!this.props.currentUnit.currentMenu.menuItems.length ? (
+                {this.props.currentUnit.currentMenu.menuItems.length ? (
                   <>
                     <div className="refeicoes">
-                      {this.recipes.map((recipe, ind) => (
+                      {this.props.currentMenuItems.map((recipe, ind) => (
                         <RecipeItem
                           key={ind}
-                          ingredients={recipe.description}
-                          thumbnail={recipe.icon}
-                          title={recipe.name}
-                          vegetarian={recipe.vegetarian}
-                          vegan={recipe.vegan}
+                          ingredients={recipe.foodItem.description}
+                          thumbnail={recipe.foodItem.icon}
+                          title={recipe.foodItem.name}
+                          vegetarian={recipe.foodItem.vegetarian}
+                          vegan={recipe.foodItem.vegan}
                         />
                       ))}
                     </div>
@@ -126,7 +127,8 @@ const mapStateToProps = (state, OwnProps: Props) => {
   return {
     unitList: unitListSelector(state),
     unitNameList: unitNameListSelector(state),
-    currentUnit: currentUnitSelector(state)
+    currentUnit: currentUnitSelector(state),
+    currentMenuItems: currentMenuItemsSelector(state)
   };
 };
 
