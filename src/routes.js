@@ -1,4 +1,4 @@
-import { RegistrationPage, LoginPage, ProfilePage, LogoutPage, Form} from "./users";
+import { RegistrationPage, LoginPage, ProfilePage, LogoutPage, Form, MealForm} from "./users";
 import {Home} from './home'
 
 const routes =  [
@@ -27,6 +27,10 @@ const routes =  [
     path: '/form',
     component: Form,
   },
+  {
+    path: '/formulario',
+    component: MealForm,
+  }
 
 ];
 

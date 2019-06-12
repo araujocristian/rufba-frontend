@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { UnauthenticatedRedirect } from "../../users";
 // Composers
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 //Helpers
 import { translateUnit } from "../../common";
 // Actions
@@ -50,7 +50,7 @@ export class Home extends Component {
               onChange={e => this.handleGetMeal(e.target.value)}
               defaultValue={this.state.unitName}
             >
-              <option>--</option>
+              <option selected>Escolher...</option>
               {this.props.unitNameList.map((unit, i) => {
                 return (
                   <option key={i} value={unit}>
@@ -109,7 +109,9 @@ export class Home extends Component {
               </div>
               <div className="new-refeicao">
                 <span>Adicione aqui sua contribuição!</span>
-                <button>Adicionar Refeição</button>
+                <Link to="/form"><button className="btn btn-deep-orange">
+                  Adicionar Refeição
+                </button></Link>
               </div>
             </>
           ) : (

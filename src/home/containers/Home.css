@@ -71,6 +71,10 @@
   margin: 20px 0;
 }
 
+.new-refeicao > a {
+  margin: auto;
+}
+
 .fila {
   background-color: #ce3c25;
   display: flex;
