@@ -1,53 +1,173 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import { makeStyles } from '@material-ui/core/styles';
-import Input from '@material-ui/core/Input';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import FilledInput from '@material-ui/core/FilledInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import ReactDOM from 'react-dom';
-import Option from 'muicss/lib/react/option';
-import Select from 'muicss/lib/react/select';
-
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    display: 'flex',
-    flexWrap: 'wrap',
+    display: "flex",
+    flexWrap: "wrap"
   },
   formControl: {
     margin: theme.spacing(1),
-    minWidth: 120,
+    minWidth: 120
   },
   selectEmpty: {
-    marginTop: theme.spacing(2),
-  },
+    marginTop: theme.spacing(2)
+  }
 }));
-const classes = useStyles();
 
 export default function AddressForm() {
+  const classes = useStyles();
+  const [values, setValues] = React.useState({
+    name: ""
+  });
+
+  function handleChange(event) {
+    setValues(oldValues => ({
+      ...oldValues,
+      [event.target.name]: event.target.value
+    }));
+  }
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Selecione as opções disponíveis
       </Typography>
-      <FormControl className={classes.formControl} >
+      <FormControl className={classes.formControl}>
         <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
-        <Select name="input" label="Select Example" defaultValue="option2">
-          <Option value="option1" label="Option 1" />
-          <Option value="option2" label="Option 2" />
-          <Option value="option3" label="Option 3" />
-          <Option value="option4" label="Option 4" />
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
         </Select>
-</FormControl>
-</React.Fragment>
-)
-
-  }
+        <FormHelperText>Opção 1</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 2</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 3</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 4</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 5</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 6</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 7</FormHelperText>
+      </FormControl>
+      <FormControl className={classes.formControl}>
+        <InputLabel htmlFor="name-disabled">Descrição</InputLabel>
+        <Select
+          value={values.name}
+          onChange={handleChange}
+          input={<Input name="name" id="opcao-1" />}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value="feijao">Feijão</MenuItem>
+          <MenuItem value="arroz">Arroz</MenuItem>
+          <MenuItem value="macarrao">Macarrão</MenuItem>
+        </Select>
+        <FormHelperText>Opção 8</FormHelperText>
+      </FormControl>
+    </React.Fragment>
+  );
+}

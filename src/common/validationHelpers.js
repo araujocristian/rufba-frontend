@@ -1,5 +1,4 @@
 // @flow
-import _ from 'lodash';
 
 const user = {
   name: (value: string) => {
