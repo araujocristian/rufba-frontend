@@ -16,6 +16,11 @@
 .sem-unidade {
   text-align: center;
   margin-top: 60px;
+  padding: 0px 20px;
+}
+.sem-unidade-img {
+  width: 150px;
+  margin: 30px auto;
 }
 .unidade {
   background-color: #ce3c25;

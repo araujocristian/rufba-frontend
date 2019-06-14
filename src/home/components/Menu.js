@@ -1,8 +1,10 @@
 import React from "react";
 //Components
 import RecipeItem from "../components/RecipeItem";
+//Images
+import NoMenu from "../images/sem-cardapio.png";
 
-const Menu = (props) => {
+const Menu = props => {
   return (
     <div className="cardapio">
       <div className="cardapio-nome">
@@ -29,6 +31,7 @@ const Menu = (props) => {
         </>
       ) : (
         <div className="sem-refeicoes">
+          <img src={NoMenu} alt="Sem Cardápio" className="sem-unidade-img" />
           <h1>Nenhum cardápio cadastrado, faça a sua contribuição!</h1>
         </div>
       )}

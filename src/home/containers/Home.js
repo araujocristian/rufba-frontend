@@ -3,12 +3,12 @@ import { UnauthenticatedRedirect } from "../../users";
 // Composers
 import { connect } from "react-redux";
 import { Link, withRouter } from "react-router-dom";
-//Helpers
-import { translateUnit } from "../../common";
 //Components
 import Unit from "../components/Unit";
 import Menu from "../components/Menu";
-
+import UnitSelector from "../components/UnitSelector";
+//Images
+import NoUnits from "../images/sem-unidades.png";
 // Actions
 import { getUnits, getUnit } from "../actions";
 // Selectors
@@ -43,22 +43,11 @@ export class Home extends Component {
     return (
       <UnauthenticatedRedirect>
         <>
-          <div className="unidade-seletor">
-            <span>Selecione sua unidade:</span>
-            <select
-              onChange={e => this.handleGetMeal(e.target.value)}
-              defaultValue={this.state.unitName}
-            >
-              <option value="--">Escolher...</option>
-              {this.props.unitNameList.map((unit, i) => {
-                return (
-                  <option key={i} value={unit}>
-                    {translateUnit(unit)}
-                  </option>
-                );
-              })}
-            </select>
-          </div>
+          <UnitSelector 
+            handleGetMeal={this.handleGetMeal}
+            unitName={this.state.unitName}
+            unitNameList={this.props.unitNameList}
+          />
           {this.props.currentUnit.length !== 0 ? (
             <>
               <Unit currentUnit={this.props.currentUnit} />
@@ -77,7 +66,8 @@ export class Home extends Component {
             </>
           ) : (
             <div className="sem-unidade">
-              <h1>Escolha uma unidade.</h1>
+              <img src={NoUnits} alt="Sem Unidade" className="sem-unidade-img"/>
+              <h1>Escolha sua unidade :D</h1>
             </div>
           )}
         </>
