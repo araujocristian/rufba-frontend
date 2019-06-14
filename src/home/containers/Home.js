@@ -57,7 +57,7 @@ export class Home extends Component {
               />
               <div className="new-refeicao">
                 <span>Adicione aqui sua contribuição!</span>
-                <Link to="/form">
+                <Link to="/formulario">
                   <button className="btn btn-deep-orange">
                     Adicionar Refeição
                   </button>

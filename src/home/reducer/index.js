@@ -39,13 +39,26 @@ const units = handleActions(
   {},
 );
 
-// LINE ITEMS
+// MENU ITEMS
 const menuItems = handleActions(
   {
     [combineActions(actions.fetchUnit)]: {
       next: (state, action) => ({
         ...state,
         ...action.payload.result.unit.currentMenu.menuItems,
+      }),
+    },
+  },
+  [],
+);
+
+// MEALS
+const meals = handleActions(
+  {
+    [combineActions(actions.fetchMeals)]: {
+      next: (state, action) => ({
+        ...state,
+        ...action.payload.result.foodItems,
       }),
     },
   },
@@ -86,6 +99,7 @@ const reducers = combineReducers({
   current,
   units,
   menuItems,
+  meals,
 
   loading,
 });
