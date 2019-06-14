@@ -31,6 +31,10 @@
   margin: auto;
 }
 
+.header-name:hover {
+  color: #ffffff
+}
+
 .header-menu {
   display: flex !important;
   font-size: 30px;
