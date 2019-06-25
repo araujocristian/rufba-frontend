@@ -51,9 +51,7 @@ export async function login(email: string, password: string) {
 export async function updateToken(token) {
   // We use a try/catch to detect situations where localStorage quota is 0, like safari private browsing mode
   try {
-    localStorage.setItem("access-token", token);
     sessionStorage.setItem("access-token", token);
-
   } catch (err) {
     // Remove items from localStorage just to be sure
     localStorage.removeItem("access-token");

@@ -3,14 +3,12 @@ const API_ENDPOINT = "http://localhost:3030";
 
 export function getToken() {
   return (
-    localStorage.getItem("access-token") ||
     sessionStorage.getItem("access-token")
   );
 }
 
 export function isAuthenticated() {
   const accessToken =
-    localStorage.getItem("access-token") ||
     sessionStorage.getItem("access-token");
   return accessToken != null;
 }
@@ -20,7 +18,6 @@ function getAuthenticatedHeaders(
 ) {
   // Get token headers from localStorage
   const accessToken =
-    localStorage.getItem("access-token") ||
     sessionStorage.getItem("access-token");
 
   if (accessToken != null) {

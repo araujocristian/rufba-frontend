@@ -1,28 +1,32 @@
-import { RegistrationPage, LoginPage, ProfilePage, LogoutPage} from "./users";
-import {Home} from './home'
+import { RegistrationPage, LoginPage, ProfilePage, LogoutPage } from "./users";
+import { Home, MealForm } from "./home";
 
-const routes =  [
+const routes = [
   {
-    path:'/',
+    path: "/",
     component: Home,
-    exact: true,
+    exact: true
   },
   {
-    path: '/cadastro',
-    component: RegistrationPage,
+    path: "/cadastro",
+    component: RegistrationPage
   },
   {
-    path:'/login',
-    component: LoginPage,
+    path: "/login",
+    component: LoginPage
   },
   {
-    path: '/logout',
-    component: LogoutPage,
+    path: "/logout",
+    component: LogoutPage
   },
   {
-    path: '/perfil',
-    component: ProfilePage,
+    path: "/perfil",
+    component: ProfilePage
   },
+  {
+    path: "/formulario",
+    component: MealForm
+  }
 ];
 
 export default routes;

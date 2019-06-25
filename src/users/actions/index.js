@@ -1,7 +1,6 @@
 import { createAction } from 'redux-actions';
 // Apis
 import User from '../api';
-import { updateToken } from '../api/session';
 // Logger
 import { logException } from '../../logHelper';
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import _ from "lodash";
 import { validationHelpers } from "../../common";
 import { connect } from "react-redux";
 import { Redirect, withRouter } from "react-router-dom";
