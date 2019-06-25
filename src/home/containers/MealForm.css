@@ -15,3 +15,11 @@
   width: 100%;
   text-align: center;
 }
+
+.form-unit > label {
+  margin-right: 15px;
+}
+
+.invisible{
+  display: none;
+}
