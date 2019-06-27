@@ -10,7 +10,7 @@ import UnitSelector from "../components/UnitSelector";
 //Images
 import NoUnits from "../images/sem-unidades.png";
 // Actions
-import { getUnits, getUnit } from "../actions";
+import { getUnits, getUnit, getMenu } from "../actions";
 // Selectors
 import {
   unitListSelector,
@@ -37,6 +37,7 @@ export class Home extends Component {
   handleGetMeal = (unitName: String) => {
     this.setState({ unitName });
     this.props.getUnit(unitName);
+    this.props.getMenu(unitName);
   };
 
   render() {
@@ -92,6 +93,9 @@ const mapDispatchToProps = (dispatch: Dispatch, stateProps) => {
     },
     getUnit: (unitName: String) => {
       dispatch(getUnit(unitName));
+    },
+    getMenu: (unitName: String) => {
+      dispatch(getMenu(unitName));
     }
   };
 };

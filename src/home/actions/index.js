@@ -49,6 +49,26 @@ export function getUnit(unitName: string) {
   };
 }
 
+/****************************
+ *** GET MENU ***
+ ****************************/
+export const fetchMenuRequest = createAction("FETCH_MENU_REQUEST");
+export const fetchMenu = createAction("FETCH_MENU");
+
+export function getMenu(unitName: string) {
+  return async (dispatch: Dispatch, getState: () => State) => {
+    try {
+      dispatch(fetchMenuRequest());
+
+      const response = await Unit.getMenu(unitName);
+      dispatch(fetchMenu(response));
+    } catch (err) {
+      logException(err);
+      dispatch(fetchMenu(err));
+    }
+  };
+}
+
 /******************
  *** GET MEALS ***
  ******************/

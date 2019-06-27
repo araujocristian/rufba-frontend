@@ -12,6 +12,13 @@ const Unit = {
     return normalized;
   },
 
+  async getMenu(unitName: String) {
+    const response = await authGet(`/model/unit/${unitName}/menu`);
+    const data = await response.json().then(b => camelizeKeys(b));
+    const normalized = normalize(data, schema.units);
+    return normalized;
+  },
+
   async getUnits() {
     const response = await authGet(`/model/unit/`);
     const data = await response.json().then(b => camelizeKeys(b));

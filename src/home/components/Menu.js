@@ -1,4 +1,5 @@
 import React from "react";
+import _ from 'lodash'
 //Components
 import RecipeItem from "../components/RecipeItem";
 //Images
@@ -10,7 +11,7 @@ const Menu = props => {
       <div className="cardapio-nome">
         <p>Cardapio do dia</p>
       </div>
-      {props.currentUnit.currentMenu.menuItems.length ? (
+      {!_.isEmpty(props.currentMenuItems) ? (
         <>
           <div className="refeicoes">
             {props.currentMenuItems.map((recipe, ind) => (

@@ -1,5 +1,5 @@
 // @flow
-const API_ENDPOINT = "http://localhost:3030";
+const API_ENDPOINT = "https://salty-harbor-58566.herokuapp.com";
 
 export function getToken() {
   return (
