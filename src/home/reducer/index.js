@@ -43,10 +43,7 @@ const units = handleActions(
 const menuItems = handleActions(
   {
     [combineActions(actions.fetchMenu)]: {
-      next: (state, action) => ({
-        ...state,
-        ...action.payload.result.trustedItems,
-      }),
+      next: (state, action) => action.payload.result.trustedItems,
     },
   },
   [],
