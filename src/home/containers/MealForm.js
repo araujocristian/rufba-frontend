@@ -115,6 +115,7 @@ export class MealForm extends Component {
   render() {
     return (
       <UnauthenticatedRedirect>
+        {console.log(this.props.mealsNameList)}
         <div className="meal-form-container col-md-6 mb-4">
           <div className="card">
             <div className="card-body">
@@ -133,9 +134,9 @@ export class MealForm extends Component {
                   className="text-center font-up form-unit"
                   onChange={e => this.setState({ unit: e.target.value })}
                 >
-                  <input type="radio" name="unit" value="ondina" />
+                  <input type="radio" name="unit" value="Ondina" />
                   <label>Ondina</label>
-                  <input type="radio" name="unit" value="sao-lazaro" />
+                  <input type="radio" name="unit" value="São Lázaro" />
                   <label>São Lázaro</label>
                 </form>
 
