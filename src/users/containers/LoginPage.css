@@ -6,3 +6,8 @@
 .login-page-container {
   margin: 100px auto;
 }
+
+.md-form {
+  display: inline-flex;
+  width: 100%;
+}
